@@ -1,0 +1,14 @@
+{
+  "params": {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/imaad",
+    "prod_uri": "mysql://root:@localhost/imaad",
+
+    "fb_url": "https://facebook.com/saddamcode",
+    "instagram_url": "https://instagram.com/saddam.code",
+    "twitter_url": "https://twitter.com/khansaddam2016",
+
+    "gmail_user": "imaadkhizer34@gmail.com",
+    "gmail_pwd": "imaad@8108"
+  }
+}

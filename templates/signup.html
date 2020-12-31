@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block body %}
+<div style="width: 100%;">
+	<div class="container">
+    <div style="width: 100%;">
+			<p id="start">User Registeration Page</p>
+			<hr align="center" width="80%">
+		</div>
+		<div id="suggest">
+			<b>Please Fill out the form below to register for our website.Fields with <span id="med">*</span> are required.</b>
+		</div>
+		<div id="myform">
+			<form method="POST" action="/Signup" autocomplete="on">
+				<div class="mb-3">
+				<b id="new">Create your new Account here</b>
+				</div>
+				<div class="form-row">
+				    <div class="form-group col-md-12" >
+				      <label for="fn">Name<span id="med">*</span></label>
+				      <input type="text" name="name" class="form-control" id="fn" >
+				    </div>
+  				</div>
+  				 <div class="form-row">
+				    <div class="form-group col-md-6">
+				      <label for="un">User Name<span id="med">*</span></label>
+				      <input type="text" name="username" class="form-control" id="un" required>
+				    </div>
+				    <div class="form-group col-md-6">
+				      <label for="pass">Password<span id="med">*</span></label>
+				      <input type="password" name="pass" class="form-control" id="pass" required >
+				    </div>
+  				</div>
+    			<br>
+    		    <div class="form-group">
+    				<label for="inputAddress2">Email<span id="med">*</span></label>
+    					<input type="email" name="email" class="form-control" id="inputAddress2" placeholder="enter your email" >
+  				</div>
+  				<br>
+  				<div class="form-row">
+    				<div class="form-group col-md-6">
+      					<label for="inputEmail4">City</label>
+      						<input type="text" name="city" placeholder="Mumbai..." class="form-control" id="inputEmail4">
+    				</div>
+    				<div class="form-group col-md-6">
+      					<label for="pn">Phone Number<span id="med">*</span></label>
+      					<input type="tel" name="phoneno" class="form-control" id="pn" placeholder="XXX-XXX-XXXX">
+    				</div>
+  				</div>
+  				<br>
+  				 <!-- <div class="form-row">
+  				 	<div class="form-group col-md-6">
+      					<label for="inputZip">Gender</label >
+      					<br>
+      					<div class="form-check form-check-inline">
+  							<input class="form-check-input" type="radio" name="Gender" id="inlineRadio1" value="Male">
+  							<label class="form-check-label" for="inlineRadio1">Male</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="radio" name="Gender" id="inlineRadio2" value="Female">
+						  <label class="form-check-label" for="inlineRadio2">Female</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" type="radio" name="Gender" id="inlineRadio3" value="other">
+						  <label class="form-check-label" for="inlineRadio3">Other</label>
+						</div>
+    				</div>
+    				<!-- <div class="form-group col-md-4">
+      					<label for="dob">Date Of Birth</label>
+      					<input type="date" name="dob" class="form-control" id="dob">
+    				</div> -->
+    				<!-- <div class="form-group col-md-6"> 
+      					<label for="inputState">Age</label>
+      						<input type="number" class="form-control" id="inputCity" min="5" name="age" max="80" value="18" step="1">
+        			</div>
+  				</div> -->
+  				<br>
+  				<div class="form-group">
+    				<label for="add">Address</label>
+    					<textarea class="form-control" id="add" rows="3" cols="30"  placeholder="enter your address here.." name="address"></textarea>
+  				</div>
+  				<br>
+  				<!-- <div class="form-group">
+				    <label for="img">Image</label>
+				    <input type="text" class="form-control" id="img" name="myimage">
+  				</div> -->
+  				<div class="form-group">
+  					<input type="submit" class="btn btn-success" value="Register">
+  				</div>
+					<br>
+					<div>
+						<p class="text-muted">Already Have an account?&nbsp;<a href='/login'>Login</a>
+						</p>
+						</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+{%endblock%}

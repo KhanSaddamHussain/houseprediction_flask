@@ -1,0 +1,269 @@
+{% extends "layout.html" %}
+{% block body %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="container mt-3">
+  {% for category,message in messages %}
+  
+  <div class="alert alert-{{category}} alert-dismissible fade show alert-danger" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  {% endfor %}
+</div>
+  
+
+{% endif %}
+{% endwith %}
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hs-slider owl-carousel">
+                <div class="hs-item set-bg" data-setbg="{{ url_for('static',filename='img/hero/hero-1.jpg')}}">
+
+                </div>
+
+                <div class="hs-item set-bg" data-setbg="{{ url_for('static',filename='img/hero/hero-2.jpg')}}">
+
+                </div>
+
+                <div class="hs-item set-bg" data-setbg="{{ url_for('static',filename='img/hero/hero-3.jpg')}}">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Search Section Begin -->
+    <section class="search-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="section-title">
+                        <h4>Enter your requirement?</h4>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+
+                </div>
+            </div>
+            <div class="search-form-content">
+
+                 <form action="/predict" method="POST" class="cc-form">
+                            <div class="group-input">
+                                <input id="income" name="income" type="text" placeholder=" Area Income">
+                                <input id="houseage" name="houseage" type="text" placeholder=" Area House Age">
+                                <input id="noofroom" name="noofroom" type="text" placeholder=" Area Number of Rooms">
+
+
+                            </div>
+                            <div class="group-input">
+                                <input id="noofbedroom" name="noofbedroom" type="text" placeholder=" Area Number of Bedrooms">
+                                <input id="population" name="population" type="text" placeholder="Area Population">
+<!--                                <input id="address" name="address" type="text" placeholder="Addresss">-->
+                            </div>
+                            <button type="submit" class="site-btn">Submit</button>
+                        </form>
+                <div class="cc-form">
+                    <h1 class="site-btn"> the predicted value is:  {{ data }}</h1>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- Search Section End -->
+
+
+
+    <!-- Chooseus Section Begin -->
+    <section class="chooseus-section spad set-bg" data-setbg="{{ url_for('static',filename='img/chooseus/chooseus-bg.jpg')}}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="chooseus-text">
+                        <div class="section-title">
+                            <h4>Why choose us</h4>
+                        </div>
+                        <p>We provide acurate house prediction with the accuracy of 91%</p>
+                    </div>
+                    <div class="chooseus-features">
+                        <div class="cf-item">
+                            <div class="cf-pic">
+                                <img src="{{ url_for('static',filename='img/chooseus/chooseus-icon-1.png')}}" alt="">
+                            </div>
+                            <div class="cf-text">
+                                <h5>Find your future home with accurate price </h5>
+                                <p>We help you find a new home by offering accurate price prediction.</p>
+                            </div>
+                        </div>
+                        <!-- <div class="cf-item">
+                            <div class="cf-pic">
+                                <img src="{{ url_for('static',filename='img/chooseus/chooseus-icon-2.png')}}" alt="">
+                            </div>
+                            <div class="cf-text">
+                                <h5>Buy or rent homes with accuracy</h5>
+                                <p>Millions of houses and apartments in your favourite cities and choose according to predict price</p>
+                            </div>
+                        </div> -->
+                        <div class="cf-item">
+                            <div class="cf-pic">
+                                <img src="{{ url_for('static',filename='img/chooseus/chooseus-icon-3.png')}}" alt="">
+                            </div>
+                            <div class="cf-text">
+                                <h5>Well Trained ML model</h5>
+                                <p>Find price with model and know your market best</p>
+                            </div>
+                        </div>
+                        <!-- <div class="cf-item">
+                            <div class="cf-pic">
+                                <img src="{{ url_for('static',filename='img/chooseus/chooseus-icon-4.png')}}" alt="">
+                            </div>
+                            <div class="cf-text">
+                                <h5>Buy and sell house and list the price </h5>
+                                <p>Predict the price now and sell or rent your own properties</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Chooseus Section End -->
+
+
+
+    <!-- Testimonial Section Begin -->
+   <!-- <section class="testimonial-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h4>What our client says?</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row testimonial-slider owl-carousel">
+                <div class="col-lg-6">
+                    <div class="testimonial-item">
+                        <div class="ti-text">
+                            <p>In my real state bussiness I suffer lose sometimes , I didn't had any idea about what would be exact
+                            price of this particular house and I got to know about House prediction AIRL and now Im selling my all house with profit
+                            </p>
+                        </div>
+                        <div class="ti-author">
+                            <div class="ta-pic">
+                                <img src="{{ url_for('static',filename='img/testimonial-author/ta-1.jpg')}}" alt="">
+                            </div>
+                            <div class="ta-text">
+                                <h5>Abd marsh</h5>
+                                <span>Real state manager</span>
+                                <div class="ta-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial-item">
+                        <div class="ti-text">
+                            <p>wow. had a great experience with house prediction model</p>
+                        </div>
+                        <div class="ti-author">
+                            <div class="ta-pic">
+                                <img src="{{ url_for('static',filename='img/testimonial-author/ta-2.jpg')}}" alt="">
+                            </div>
+                            <div class="ta-text">
+                                <h5>Sunil Narayan</h5>
+                                <span>Cricketer</span>
+                                <div class="ta-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial-item">
+                        <div class="ti-text">
+                            <p>Lorem ipsum dolor amet, consectetur adipiscing elit, seiusmod tempor incididunt ut labore
+                                magna aliqua. Quis ipsum suspendisse ultrices gravida accumsan lacus vel facilisis.</p>
+                        </div>
+                        <div class="ti-author">
+                            <div class="ta-pic">
+                                <img src="{{ url_for('static',filename='img/testimonial-author/ta-1.jpg')}}" alt="">
+                            </div>
+                            <div class="ta-text">
+                                <h5>Arise Naieh</h5>
+                                <span>Designer</span>
+                                <div class="ta-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     Testimonial Section End -->
+
+    <!-- Logo Carousel Begin -->
+    <!-- <div class="logo-carousel">
+        <div class="container">
+            <div class="lc-slider owl-carousel">
+                <a href="#" class="lc-item">
+                    <div class="lc-item-inner">
+                        <img src="{{ url_for('static',filename='img/logo-carousel/lc-1.png')}}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="lc-item">
+                    <div class="lc-item-inner">
+                        <img src="{{ url_for('static',filename='img/logo-carousel/lc-2.png')}}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="lc-item">
+                    <div class="lc-item-inner">
+                        <img src="{{ url_for('static',filename='img/logo-carousel/lc-3.png')}}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="lc-item">
+                    <div class="lc-item-inner">
+                        <img src="{{ url_for('static',filename='img/logo-carousel/lc-4.png')}}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="lc-item">
+                    <div class="lc-item-inner">
+                        <img src="{{ url_for('static',filename='img/logo-carousel/lc-5.png')}}" alt="">
+                    </div>
+                </a>
+                <a href="#" class="lc-item">
+                    <div class="lc-item-inner">
+                        <img src="{{ url_for('static',filename='img/logo-carousel/lc-6.png')}}" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div> -->
+    <!-- Logo Carousel End -->
+
+{% endblock %}
